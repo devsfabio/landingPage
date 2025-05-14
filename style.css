@@ -80,16 +80,40 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero{
-  background:linear-gradient(135deg, var(--rosa-claro), var(--roxo-claro)); ;
+  background: 
+    linear-gradient(rgba(138, 90, 155, 0.7), rgba(138, 90, 155, 0.7)),
+    url('assets/foto\ fundo.jpg') center/cover no-repeat;
   color: var(--cinza-escuro);
   padding: 150px 0 100px;
   text-align: center;
   margin-top: 70px;
 }
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding-top: 30vh;
+  text-align: center;
+}
 .hero h2{
-
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
@@ -98,7 +122,7 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 .hero .nome{
-  color: #C13584;
+  color: black;
 }
 .hero .name{
   font-size: 1.2rem;
@@ -106,7 +130,7 @@ nav ul li a:hover {
 }
 .btn{
   display: inline-block;
-  background: var(--roxo-escuro);
+  background:#3d0062;
   color: var(--branco);
   padding: 12px 30px;
   border-radius: 30px;
@@ -116,7 +140,7 @@ nav ul li a:hover {
 }
 
 .btn:hover{
-  background-color: var(--roxo);
+  background-color: var(--roxo-escuro);
   color: var(--branco);
 }
 
@@ -234,6 +258,8 @@ height: 100%;
     display: block;
 }
 
+
+
 /* video-galeria */
 .videos-grid{
   display: grid;
@@ -250,8 +276,8 @@ height: 100%;
 
 }
 .video-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(138, 90, 155, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(12, 12, 12, 0.3);
 }
 
 .video-item video{
@@ -259,7 +285,7 @@ height: 100%;
   height: 200px;
   object-fit: cover;
   display: block;
-  background: #b185db;
+
 }
 
 

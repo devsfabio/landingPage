@@ -88,38 +88,25 @@ nav ul li a:hover {
   text-align: center;
   margin-top: 70px;
 }
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 1;
-}
 
 .hero-content {
   position: relative;
   z-index: 2;
-  color: white;
+  color: rgb(255, 255, 255);
   padding-top: 30vh;
   text-align: center;
 }
+
 .hero h2{
   font-size: 2.8rem;
   margin-bottom: 20px;
+
 }
 
 .hero p{
   font-size: 2rem;
   margin-bottom: 30px;
+  color: var(--cinza-escuro);
 }
 .hero .nome{
   color: black;
@@ -266,9 +253,10 @@ height: 100%;
   grid-template-columns: repeat(2,1fr);
   gap: 30px;
   margin: 50px 0;
+
 }
+
 .video-item{
-  
   border-radius: 12px;
   overflow: hidden;
    box-shadow: 0 4px 12px rgba(0,0,0,0.08);  

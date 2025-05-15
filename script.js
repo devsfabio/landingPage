@@ -22,48 +22,50 @@ const fechar = modal.querySelector('.fechar');
 
 midias.forEach((midia) => {
   midia.addEventListener('click', (e) => {
-    e.preventDefault(); // Evita ações inesperadas
-    conteudo.innerHTML = ''; // Limpa o conteúdo anterior
+    e.preventDefault();
+    conteudo.innerHTML = '';
 
-    // ✅ Pausa todos os vídeos da página (inclusive o que foi clicado)
+    // ✅ Pausa todos os vídeos da página (original incluso)
     document.querySelectorAll('video').forEach((v) => {
       v.pause();
-      v.currentTime = 0; // Reinicia o tempo, opcional
+      v.currentTime = 0;
     });
 
-    // Cria a imagem ou vídeo no modal
     if (midia.tagName === 'IMG') {
       const img = document.createElement('img');
       img.src = midia.src;
       conteudo.appendChild(img);
     } else if (midia.tagName === 'VIDEO') {
-      const video = document.createElement('video');
-      video.src = midia.src;
+      // ✅ Clona o vídeo sem estado anterior
+      const video = midia.cloneNode(true);
       video.controls = true;
       video.autoplay = true;
-      video.style.maxWidth = '100%';
+      video.currentTime = 0;
       conteudo.appendChild(video);
+
+      // 🔒 Garante que o som não venha do original
+      midia.pause();
     }
 
     modal.style.display = 'flex';
   });
 });
 
-// Fecha o modal ao clicar no X
+// Fecha com botão X
 fechar.addEventListener('click', () => {
   modal.style.display = 'none';
   conteudo.innerHTML = '';
-  // ✅ Pausa o vídeo no modal
+
   const video = conteudo.querySelector('video');
   if (video) video.pause();
 });
 
-// Fecha ao clicar fora
+// Fecha clicando fora do conteúdo
 modal.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
     conteudo.innerHTML = '';
-    // ✅ Pausa o vídeo do modal
+
     const video = conteudo.querySelector('video');
     if (video) video.pause();
   }

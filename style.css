@@ -513,7 +513,7 @@ border-radius: 50%;
 }
 .modal-conteudo video {
   object-fit: contain;
-   background-color: black;
+   background-color: black !important;
 }
 
 .fechar {

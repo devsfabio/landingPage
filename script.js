@@ -70,3 +70,51 @@ modal.addEventListener('click', (e) => {
     if (video) video.pause();
   }
 });
+
+const fraseParte1 = 'Da sua pele... ';
+const fraseParte2 = 'cuido Eu!';
+const typewriter = document.getElementById('typewriterTarget');
+
+function escreverTexto() {
+  typewriter.innerHTML = '';
+
+  const totalTexto = fraseParte1 + fraseParte2;
+
+  totalTexto.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.classList.add('char');
+
+    if (i >= fraseParte1.length) {
+      const colorido = document.createElement('span');
+      colorido.classList.add('char');
+      colorido.style.animationDelay = `${i * 0.05}s`;
+      colorido.textContent = char;
+      colorido.style.color = '#c13584';
+      span.appendChild(colorido);
+    } else {
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.animationDelay = `${i * 0.05}s`;
+    }
+
+    typewriter.appendChild(span);
+  });
+}
+
+function apagarTexto() {
+  const spans = typewriter.querySelectorAll('.char');
+  spans.forEach((span, i) => {
+    setTimeout(() => {
+      span.style.opacity = 0;
+    }, i * 20);
+  });
+}
+
+function loop() {
+  escreverTexto();
+  setTimeout(() => {
+    apagarTexto();
+    setTimeout(loop, 1000);
+  }, 3000); // duração visível antes de apagar
+}
+
+loop();

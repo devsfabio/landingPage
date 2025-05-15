@@ -102,7 +102,7 @@
         <h2>Galeria de Fotos e Vídeos.</h2>
         <div class="foto-grid">
           <div class="foto-item">
-            <img
+            <img class="midia"
               src="assets/foto1.jpg"
               alt="foto do procedimento"
               title="Procedimento"
@@ -110,13 +110,13 @@
             />
           </div>
           <div class="foto-item">
-            <img src="assets/foto2.jpg" alt="foto do procedimento"  />
+            <img class="midia" src="assets/foto2.jpg" alt="foto do procedimento"  />
           </div>
           <div class="foto-item">
-            <img src="assets/foto3.jpg" alt="foto do procedimento" />
+            <img class="midia" src="assets/foto3.jpg" alt="foto do procedimento" />
           </div>
           <div class="foto-item">
-            <img src="assets/foto4.jpg" alt="foto do procedimento"  />
+            <img class="midia" src="assets/foto4.jpg" alt="foto do procedimento"  />
           </div>
         </div>
    
@@ -127,36 +127,43 @@
       <div class="container">
         <div class="videos-grid">
           <div class="video-item">
-            <video controls pause  preload="metadata">
-              <source src="assets/video1.mp4" type="video/mp4">
+            <video class='midia' src="assets/video1.mp4"  controls pause  preload="metadata">
+          
             </video>
           </div>
           <div class="video-item">
-            <video controls pause  preload="metadata" >
-              <source src="assets/video2.mp4" type="video/mp4">
+            <video controls class='midia' pause src="assets/video2.mp4"  preload="metadata" >
+           
             </video>  
           </div>
           <div class="video-item">
-            <video controls pause  preload="metadata">
-              <source src="assets/video3.mp4" type="video/mp4">
+            <video class='midia' src="assets/video3.mp4" controls pause  preload="metadata">
+             
             </video>
           </div>
           <div class="video-item">
-            <video controls pause  preload="metadata">
-              <source src="assets/video4.mp4" type="video/mp4">
+            <video class='midia' src="assets/video4.mp4" controls pause  preload="metadata">
+             
             </video>
           </div>
           <div class="video-item">
-            <video controls pause  preload="metadata">
-              <source src="assets/video5.mp4" type="video/mp4">
+            <video class='midia' src="assets/video5.mp4" controls pause  preload="metadata">
+       
             </video>
           </div>
           <div class="video-item">
-            <video controls pause  preload="metadata">
-                <source src="assets/video6.mp4" type="video/mp4">
+            <video class='midia' src="assets/video6.mp4" controls pause  preload="metadata">
+               
             </video>
           </div>
         </div>
+        <!-- Modal (popup) -->
+<div id="modal" class="modal">
+  <span class="fechar">&times;</span>
+  <div class="modal-conteudo">
+    <!-- Conteúdo (imagem ou vídeo) será inserido aqui -->
+  </div>
+</div>
       </div>
     </section>
 
